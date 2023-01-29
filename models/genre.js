@@ -1,7 +1,7 @@
 const {Model, DataTypes} = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
-/** Added model for genres of the movie */
+/** Added mdoel for Genres */
 class Genres extends Model {}
 
 Genres.init(
@@ -12,7 +12,7 @@ Genres.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      genre_name: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -21,10 +21,9 @@ Genres.init(
       sequelize,
       timestamps: false,
       freezeTableName: true,
-      undeerscored: true,
+      underscored: true,
       modelName: 'genres',
     },
-
 );
 
 module.exports = Genres;

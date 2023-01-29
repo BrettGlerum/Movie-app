@@ -1,0 +1,35 @@
+{{#if loggedIn}}
+<aside>
+    <h2>Showings</h2>
+      {{#each movies.showings as |showings|}}
+    {{> showing-details}}
+    {{/each}}
+    </aside>
+        <div class="genre">
+<section class="movie" data-movie_id={{id}}>
+  <img src="/images/{{movies.filename}}">
+  <div class="movie-details">
+    <h3>{{movies.title}}</h3>
+    <p>Length: {{movies.run_time}}</p>
+     <p>{{movies.description}}</p>
+     <header>Critics are saying</header>
+    {{#each movies.reviews as |reviews|}}
+    {{> review-details}}
+    {{/each}}
+  </div>
+<div>
+  <form class="form review-form">
+   <div class="review-card">
+    <header> Add your review below</header>
+        <label for="name-signup"> </label>
+        <input class="review-signup" type="text" id="review-signup" name="review-signup"/>
+        <button class="btn btn-primary" type="submit">Add review</button>
+    </div>
+  </form>
+</div>
+</section>
+</div>
+<script src="/js/review.js"></script>
+{{else}}
+<a href="/login">Please login to see the movies!</a>
+{{/if}}

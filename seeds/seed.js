@@ -1,23 +1,23 @@
-const sequelize = require('../config/connection');
-const {Users, Movies, Genres, Showings, Reviews, Concessions, conCat} = require('../models');
+const sequelize = require("../config/connection");
+const seedconCat = require("./conCat-seeds");
+const seedConcessions = require("./concessions-seeds");
+const seedMovies = require("./movies-seeds");
+const seedGenres = require("./genres-seeds");
+const seedReviews = require("./review-seeds");
+const seedUsers = require("./users-seeds");
+const seedTimes = require("./showing-seeds");
 
-const conCatData = require('./conCat-seeds');
-const concessionData = require('./concessions-seeds');
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
 
-const seedDatabase = async () => {
-  await sequelize.sync({force: true});
-
-  const concessions = await Concessions.bulkCreate(concessionData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  const conCats = await conCat.bulkCreate(conCatData, {
-    individualHooks: true,
-    returning: true,
-  });
+  await seedUsers();
+  await seedGenres();
+  await seedMovies();
+  await seedReviews();
+  await seedconCat();
+  await seedConcessions();
+  await seedTimes();
 
   process.exit(0);
 };
-
-seedDatabase();
+seedAll();

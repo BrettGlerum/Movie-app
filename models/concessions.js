@@ -1,7 +1,8 @@
 const {Model, DataTypes} = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
-/** Added a model for the concessions */
+
+/** Model for Concessions */
 class Concessions extends Model {}
 
 Concessions.init(
@@ -10,7 +11,7 @@ Concessions.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
+          autoIncrement: true,
       },
       product_name: {
         type: DataTypes.STRING,
@@ -25,12 +26,11 @@ Concessions.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         isNumeric: true,
-
       },
       category_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'categories',
+          model: 'category',
           key: 'id',
         },
       },
@@ -39,10 +39,8 @@ Concessions.init(
       sequelize,
       timestamps: false,
       freezeTableName: true,
-      undeerscored: true,
+      underscored: true,
       modelName: 'concessions',
     },
-
 );
-
 module.exports = Concessions;

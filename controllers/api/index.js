@@ -1,11 +1,10 @@
 // eslint-disable-next-line new-cap
 const router = require('express').Router();
-const userRoutes = require('./users-routes');
-const moviesRoutes = require('./movies-routes');
-const concessionRoutes = require('./concessions-routes');
+
+const userRoutes = require('./user-routes');
+const reviewRoutes = require('./review-routes');
 
 router.use('/users', userRoutes);
-router.use('/movies', moviesRoutes);
-router.use('/concessions', concessionRoutes);
+router.use('/reviews', reviewRoutes);
 
 module.exports = router;

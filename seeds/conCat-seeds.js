@@ -2,19 +2,19 @@ const {conCat} = require('../models');
 
 const categoryData = [
   {
-    category_name: 'Non-Alcoholic Beverages',
+    name: 'Non-Alcoholic Beverages',
   },
   {
-    category_name: 'Alcoholic Beverages',
+    name: 'Alcoholic Beverages',
   },
   {
-    category_name: 'Food',
+    name: 'Food',
   },
   {
-    category_name: 'Snacks',
+    name: 'Snacks',
   },
 ];
 
-const seedConcessions = () => conCat.bulkCreate(categoryData);
+const seedConCat = () => conCat.bulkCreate(categoryData);
 
-module.exports = seedConcessions;
+module.exports = seedConCat;

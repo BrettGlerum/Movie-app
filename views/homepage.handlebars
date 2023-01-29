@@ -1,0 +1,20 @@
+
+<aside >
+        <h2>These are the snacks we have available</h2>
+{{#each snacks as |concessions|}}
+{{> concession-details}}
+{{/each}}
+<div class="snack-card">
+<header>Msc. Candy</header>
+
+    <div class="card-body">
+      <p>Cost: Variable</p>
+    </div>
+</div>
+</aside>
+
+<div class="genre">
+{{#each genres as |genres|}}
+{{> genre-details}}
+{{/each}}
+</div>

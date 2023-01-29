@@ -1,8 +1,7 @@
 const {Model, DataTypes} = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
-/** Adding a model for showing times
-*/
+/** added class for showings */
 class Showings extends Model {}
 
 Showings.init(
@@ -25,6 +24,7 @@ Showings.init(
         type: DataTypes.DECIMAL,
         allowNull: false,
         isDecimal: true,
+
       },
       movie_id: {
         type: DataTypes.INTEGER,
@@ -38,7 +38,7 @@ Showings.init(
       sequelize,
       timestamps: false,
       freezeTableName: true,
-      undeerscored: true,
+      underscored: true,
       modelName: 'showings',
     },
 );

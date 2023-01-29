@@ -1,38 +1,36 @@
 {
-    "name": "movie_theater_database",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node server.js",
-      "seed": "node seeds/seed.js",
-      "dev": "react-scripts start",
-      "start": "serve -s build",
-      "build": "react-scripts build",
-      "test": "react-scripts test --env=jsdom",
-      "eject": "react-scripts eject",
-      "heroku-postbuild": "npm run build"
-    },
-  
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Nevin-Lewis/movie_theater_database.git"
-    },
-    "author": "Group",
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/Nevin-Lewis/movie_theater_database/issues"
-    },
-    "homepage": "https://github.com/Nevin-Lewis/movie_theater_database#readme",
-    "dependencies": {
-      "bcrypt": "^5.1.0",
-      "dotenv": "^16.0.3",
-      "express": "^4.18.2",
-      "express-handlebars": "^6.0.6",
-      "express-session": "^1.17.3",
-      "sequelize": "^6.28.0",
-      "serve": "^14.1.2"
-    }
-  } 
+  "name": "movie_theater_database",
+  "version": "1.0.0",
+  "description": "This is the movie theatre database for UT project #2",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nevin-Lewis/movie_theater_database.git"
+  },
+  "keywords": [
+    "database",
+    "sequelize"
+  ],
+  "author": "Nevin Lewis, Brett Glerum, Shawn Smith, Jake Waller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nevin-Lewis/movie_theater_database/issues"
+  },
+  "homepage": "https://github.com/Nevin-Lewis/movie_theater_database#readme"
+}
